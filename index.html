@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>隨機圖片抽選</title>
+    <!-- 引入外部 CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>隨機圖片抽選</h1>
+    <div>
+        <button onclick="drawRandomImage()">抽選</button>
+    </div>
+    <div id="image-container">
+        <img id="random-image" src="" alt="" style="display: none;">
+    </div>
+
+    <script>
+        // 圖片目錄與分類
+        const suits = ['A']; // 花色
+        const ranks = ['1', '2', '3', '4', '5']; // 值
+
+        // 隨機抽選圖片的函式
+        function drawRandomImage() {
+            const suit = suits[Math.floor(Math.random() * suits.length)];
+            const rank = ranks[Math.floor(Math.random() * ranks.length)];
+
+            // 使用模板字串生成圖片路徑
+            const imagePath = `./images/${rank}_${suit}.png`;
+
+            // 更新圖片路徑並顯示
+            const imageElement = document.getElementById("random-image");
+            imageElement.src = imagePath;
+            imageElement.style.display = "block";
+
+            // 測試輸出圖片路徑
+            console.log(`Loading image: ${imagePath}`);
+        }
+    </script>
+</body>
+</html>

@@ -1,27 +1,42 @@
-<!DOCTYPE html>
+<!-- 宣告此為使用html語法編輯的程式碼 -->
+<!DOCTYPE html> 
+<!-- 告知機器該網頁抓取代碼之範圍在<html>至</html>之間, lang為告知寫作的語言地區, "en"為不特定語言地區 不影響網頁呈現 -->
 <html lang="en">
+<!-- <head>範圍內為機器網頁讀取之令與相關標籤-->
 <head>
+    <!-- UTF-8 編碼類型 -->
     <meta charset="UTF-8">
+    <!-- 授權網頁依使用者裝置自行判斷呈現尺寸 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 供搜索引擎尋找之網頁標題 -->
     <title>隨機圖片抽選</title>
     <!-- 引入外部 CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
+<!-- <body>範圍內為網頁使用者觀看的部分 -->
 <body>
+    <!-- 網頁大標題<h1>欄位定義 -->
     <h1>隨機圖片抽選</h1>
+    <!-- 抽選按鈕建置, 設定按鈕功能與名稱 -->
     <div>
         <button onclick="drawRandomImage()">抽選</button>
     </div>
     <div id="image-container">
         <img id="random-image" src="" alt="" style="display: none;">
     </div>
-
+    <!-- 連結按鈕設定,設定點選後前往的網頁位置 -->
+    <div>
+        <button onclick="window.open('http://www.mrchurch.org.tw/', '_blank')">
+            前往美仁浸信會
+        </button>
+    
+    <!--<script>運行腳本, 網頁動態變化會寫在這段落內-->
     <script>
         // 圖片目錄與分類
-        const suits = ['A']; // 花色
-        const ranks = ['1', '2', '3', '4', '5']; // 值
+        const suits = ['A']; // 主分類代碼
+        const ranks = ['1', '2', '3', '4', '5']; //子分類代碼 
 
-        // 隨機抽選圖片的函式
+        // 隨機抽選圖片的函式並定義當點選抽選按鈕時的判斷動作
         function drawRandomImage() {
             const suit = suits[Math.floor(Math.random() * suits.length)];
             const rank = ranks[Math.floor(Math.random() * ranks.length)];

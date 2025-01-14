@@ -61,7 +61,7 @@ button:active {
 }
 
 img {
-    width: 800;
+    width: 800px;
     height: 533px;
     object-fit: contain;
     border: 4px solid #ddd;

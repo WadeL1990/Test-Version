@@ -20,13 +20,14 @@ h1 {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
 }
-h2  {
+/* h2  { 
     position: fixed;
     bottom: 0;
     font-size: 1rem;
     color: #333;
     text-shadow: 0.5px 0.5px 2px rgba(0, 0, 0, 0.1);
 }
+*/
 
 /* 按鈕樣式 */
 button {
